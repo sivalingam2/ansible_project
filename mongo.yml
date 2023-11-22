@@ -4,7 +4,7 @@
   tasks:
     - name: install mongodb
       ansible.builtin.yum:
-        name: mongodb-org
+        name: mongodb
         state: installed
 
     - name: copy files
