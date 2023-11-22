@@ -1,6 +1,6 @@
 - name: frontend script
   hosts: all
-  become: yes
+  become: true
   tasks:
     - name: install nginx
       ansible.builtin.yum:
