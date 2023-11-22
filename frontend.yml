@@ -9,7 +9,7 @@
 
     - name: Copy repo files
       ansible.builtin.copy:
-        src: frontend.conf
+        src: nginx-robosho-conf
         dest: /etc/nginx/default.d/roboshop.conf
 
     - name: remove the lod content
