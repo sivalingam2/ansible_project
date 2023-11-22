@@ -9,7 +9,7 @@
 
     - name: Copy repo files
       ansible.builtin.copy:
-        src: nginx-robosho-conf
+        src: nginx-roboshop-conf
         dest: /etc/nginx/default.d/roboshop.conf
 
     - name: remove the lod content
@@ -31,6 +31,6 @@
     - name: restart nginx
       ansible.builtin.systemd:
         name: nginx
-        state: restarted
+        state: started
         enabled: yes
 
