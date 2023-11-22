@@ -19,7 +19,7 @@
 
     - name: add the content
       ansible.builtin.file:
-        path: /usr/share/nginx/html/*
+        path: /usr/share/nginx/html
         state: directory
 
     - name: download and extract content
