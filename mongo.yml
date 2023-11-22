@@ -2,15 +2,16 @@
   hosts: all
   become: true
   tasks:
+    - name: copy files
+      ansible.builtin.copy:
+        src: mongo.repo
+        dest: /etc/yum.repos.d/mongo.repo
+
     - name: install mongodb
       ansible.builtin.yum:
         name: mongodb
         state: installed
 
-    - name: copy files
-      ansible.builtin.copy:
-        src: mongo.repo
-        dest: /etc/yum.repos.d/mongo.repo
 
     - name:  upadate listen address
       ansible.builtin.replace:
