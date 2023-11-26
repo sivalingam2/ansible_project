@@ -8,10 +8,11 @@
     - name: printing conditions
       ansible.builtin.debug:
         msg: role name is - devops engineer
-      when: fruit is defined
+      when: fruit is true
 
 
     - name: printing conditions
       ansible.builtin.debug:
         msg: designation name is - devops engineer
-      when: veg is defined
+      when: veg is true
+
