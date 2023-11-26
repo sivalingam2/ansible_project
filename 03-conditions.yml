@@ -1,0 +1,17 @@
+- name:  printing conditions
+  hosts: all
+  become: true
+  vars:
+    roles: true
+    great: false
+  tasks:
+    - name: printing conditions
+      ansible.builtin.debug:
+        msg: role name is - devops engineer
+      when: roles is defined
+
+
+    - name: printing conditions
+      ansible.builtin.debug:
+        msg: designation name is - devops engineer
+      when: great is defined
