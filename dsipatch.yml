@@ -1,0 +1,8 @@
+- name: payment service
+  hosts: all
+  become: true
+  vars:
+    component: dispacth
+  tasks:
+    - name: import tasks
+      ansible.builtin.import_tasks: go.yml

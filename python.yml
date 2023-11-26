@@ -1,0 +1,18 @@
+- name: install python
+  ansible.builtin.yum:
+    name:
+      - python36
+      - gcc
+      - python3-devel
+    state: installed
+
+- name: import file nodejs
+  ansible.builtin.import_tasks: app_prereq.yml
+
+- name: download nodejs dependencies
+  ansible.builtin.shell: pip3.6 install -r requirements.txt
+  args:
+    chdir: /app
+
+- name: load the service
+  ansible.builtin.import_tasks: systemd.yml
