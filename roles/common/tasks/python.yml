@@ -6,7 +6,7 @@
       - python3-devel
     state: installed
 
-- name: import files
+- name: import file
   ansible.builtin.import_tasks: app_prereq.yml
 
 - name: download dependencies

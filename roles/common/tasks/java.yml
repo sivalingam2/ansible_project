@@ -3,7 +3,7 @@
     name: maven
     state: installed
 
-- name: import files
+- name: import file
   ansible.builtin.import_tasks: app_prereq.yml
 
 - name: clean download dependenciee
