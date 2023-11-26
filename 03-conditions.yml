@@ -2,16 +2,16 @@
   hosts: all
   become: true
   vars:
-    roles: true
-    great: false
+    fruit: true
+    veg: false
   tasks:
     - name: printing conditions
       ansible.builtin.debug:
         msg: role name is - devops engineer
-      when: roles is defined
+      when: fruit is defined
 
 
     - name: printing conditions
       ansible.builtin.debug:
         msg: designation name is - devops engineer
-      when: great is defined
+      when: veg is defined
