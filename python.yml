@@ -6,10 +6,10 @@
       - python3-devel
     state: installed
 
-- name: import file nodejs
+- name: import files
   ansible.builtin.import_tasks: app_prereq.yml
 
-- name: download nodejs dependencies
+- name: download dependencies
   ansible.builtin.shell: pip3.6 install -r requirements.txt
   args:
     chdir: /app
