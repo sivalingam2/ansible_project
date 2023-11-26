@@ -7,7 +7,7 @@
   ansible.builtin.import_tasks: app_prereq.yml
 
 - name: download  dependencies
-  ansible.builtin.shell: go mod init dispatch ; go get ; go build
+  ansible.builtin.shell: go mod init {{ component }} ; go get ; go build
   args:
     chdir: /app
 
