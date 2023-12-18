@@ -1,3 +1,6 @@
+- name: set hostname frontend
+  ansible.builtin.shell: set-hostname frontend
+
 - name: install nginx
   ansible.builtin.yum:
     name: nginx
