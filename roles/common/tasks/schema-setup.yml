@@ -9,6 +9,6 @@
     state: installed
 
 - name: load schema
-  ansible.builtin.shell: mongo --ssl --host {{ lookup('amazon.aws.aws_ssm', 'docudb.dev.endpoint', region='us-east-1' ) }}:27017 --sslCAFile global-bundle.pem --username docudbadmin --password roboshop123 </app/schema/{{ component }}.js
+  ansible.builtin.shell: mongo --ssl --host {{ lookup('amazon.aws.aws_ssm', 'docudb.{{ env }}.endpoint', region='us-east-1' ) }}:27017 --sslCAFile global-bundle.pem --username docudbadmin --password roboshop123 </app/schema/{{ component }}.js
 
 
