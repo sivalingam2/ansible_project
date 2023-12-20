@@ -8,7 +8,14 @@
     name: mongodb-org-shell
     state: installed
 
+- name: Download foo.conf
+  ansible.builtin.get_url:
+    url: https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+    dest: /app/rds-combined-ca-bundle.pem
+
+
+
 - name: load schema
-  ansible.builtin.shell: mongo --ssl --host {{ lookup('amazon.aws.aws_ssm', 'docudb.{{ env }}.endpoint', region='us-east-1' ) }}:27017 --sslCAFile global-bundle.pem --username docudbadmin --password roboshop123 </app/schema/{{ component }}.js
+  ansible.builtin.shell: mongo --ssl --host {{ lookup('amazon.aws.aws_ssm', 'docudb.{{ env }}.endpoint', region='us-east-1' ) }}:27017 --sslCAFile /app/rds-combined-ca-bundle.pem --username docudbadmin --password roboshop123 </app/schema/{{ component }}.js
 
 
